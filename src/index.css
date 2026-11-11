@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Heebo", "Arial", sans-serif;
+  color: #0f172a;
+  background: #f6f7f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+* { box-sizing: border-box; }
+html { min-width: 360px; scroll-behavior: smooth; }
+body { min-width: 360px; margin: 0; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.math-key {
+  display: flex;
+  min-width: 0;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border: 1px solid #dfe3e9;
+  border-radius: 7px;
+  background: #fff;
+  color: #424a56;
+  font-family: "Heebo", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 6%);
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease, transform 120ms ease;
+}
+.math-key:hover { border-color: #a5b4fc; background: #f3f2ff; color: #5145cd; }
+.math-key:active { transform: scale(0.96); }
+.math-key-accent { background: #f0efff; color: #5145cd; }
+.math-key-delete { background: #fff4f3; color: #bd4d45; }
+.math-keyboard { overflow: hidden; border: 1px solid #e0e4ea; border-radius: 10px; background: #eef0f3; }
+.math-keyboard-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; padding: 4px; background: #e8eaee; }
+.math-keyboard-tab { display: flex; min-width: 0; align-items: center; justify-content: center; gap: 4px; border-radius: 7px; padding: 7px 3px; color: #697180; font-size: 10px; font-weight: 700; transition: background 120ms ease, color 120ms ease; }
+.math-keyboard-tab:hover { color: #394150; }
+.math-keyboard-tab.is-active { background: #fff; color: #5145cd; box-shadow: 0 1px 3px rgb(15 23 42 / 10%); }
+.math-keyboard-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; padding: 8px; }
+.math-keyboard-hint { display: flex; align-items: center; gap: 5px; padding: 0 9px 8px; color: #737b89; font-size: 10px; }
+.graph-toolbar-button { display: flex; width: 31px; height: 31px; align-items: center; justify-content: center; border-radius: 8px; color: #64748b; transition: background 120ms ease, color 120ms ease; }
+.graph-toolbar-button:hover { background: #fff; color: #4f46e5; }
+.graph-toolbar-button:focus-visible, .expression-action:focus-visible, .math-key:focus-visible, .math-keyboard-tab:focus-visible { outline: 2px solid #818cf8; outline-offset: 2px; }
+.expression-card { border: 1px solid #e2e6ec; border-inline-start: 3px solid; border-radius: 9px; background: #fff; padding: 9px; transition: box-shadow 120ms ease, border-color 120ms ease; }
+.expression-card.is-selected { box-shadow: 0 0 0 2px rgb(99 102 241 / 13%); }
+.expression-action { display: flex; width: 27px; height: 27px; flex: 0 0 auto; align-items: center; justify-content: center; border-radius: 6px; color: #818a98; transition: background 120ms ease, color 120ms ease; }
+.expression-action:hover, .expression-action.is-on { background: #efedff; color: #5549d0; }
+.expression-remove:hover { background: #fff0ef; color: #be5149; }
+.expression-preview { display: flex; min-height: 30px; align-items: center; gap: 3px; overflow-x: auto; margin: 7px 0 0 18px; border-radius: 6px; padding: 3px 7px; background: #f8f9fb; color: #343a46; font-family: "Cambria Math", "Times New Roman", serif; font-size: 16px; }
+.math-preview { display: inline-flex; min-height: 24px; align-items: center; gap: 1px; white-space: nowrap; }
+.math-preview-empty { color: #9aa2af; font-family: "Heebo", sans-serif; font-size: 11px; }
+.math-preview-fraction { display: inline-flex; min-width: 16px; flex-direction: column; align-items: stretch; justify-content: center; margin: 1px 3px; text-align: center; vertical-align: middle; font-size: 0.88em; line-height: 1.15; }
+.math-preview-numerator { display: block; padding: 0 4px 2px; }
+.math-preview-denominator { display: block; border-top: 1px solid currentColor; padding: 2px 4px 0; }
+.math-preview-power { display: inline-flex; align-items: flex-start; }
+.math-preview-power sup { padding-inline-start: 1px; font-size: 0.68em; line-height: 1; }
+.math-preview-root { display: inline-flex; align-items: stretch; margin: 0 2px; }
+.math-preview-radical { align-self: center; font-family: "Cambria Math", serif; font-size: 1.55em; line-height: 0.9; }
+.math-preview-radicand { border-top: 1px solid currentColor; padding: 1px 3px 0 1px; }
+.math-preview-function { font-style: italic; }
+.math-preview-paren { color: #606979; }
+.math-preview-operation { display: inline-flex; align-items: center; }
+.extremum-label { fill: #475569; font-family: "Heebo", sans-serif; font-size: 12px; font-weight: 700; paint-order: stroke; stroke: white; stroke-width: 4px; stroke-linejoin: round; }
+.graph-label { fill: #8190a6; font-family: "Heebo", sans-serif; font-size: 13px; font-weight: 500; user-select: none; }
+.graph-axis-label { fill: #52647e; font-family: "Heebo", sans-serif; font-size: 15px; font-style: italic; font-weight: 700; user-select: none; }
+::selection { background: #c7d2fe; color: #312e81; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
